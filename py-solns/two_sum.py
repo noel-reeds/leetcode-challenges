@@ -1,16 +1,20 @@
 class TwoSum(object):
     """Two Sum class"""
     def two_sum(self, nums, target):
-        nums_sum = 0
-        presum = []
+        """returns indices of nums, sum to target."""
+        sub_nums = []
         for num in nums:
-            nums_sum += num
-            presum.append(nums_sum)
-        if target in presum:
-            indices = []
-            index = 0
-            for sums in presum:
-                if sums <= target:
-                    indices.append(index)
-                    index += 1
-        return indices
+            if num < target:
+                sub_nums.append(num)
+        for num in sub_nums:
+            index_ar = []
+            rem = target - num
+            if rem in sub_nums:
+                index_ar.append(num)
+                index_ar.append(rem)
+        index_arr = []
+        for m in range(len(nums)):
+            for num in index_ar:
+                if num == nums[m]:
+                    index_arr.append(m)
+        return index_arr

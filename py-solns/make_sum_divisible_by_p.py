@@ -18,4 +18,3 @@ class Solution(object):
         """Check if rem is in nums array!"""
         if rem in nums:
             return 1
-        
