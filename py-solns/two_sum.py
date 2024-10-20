@@ -1,6 +1,8 @@
+from typing import List
+
 class TwoSum(object):
     """Two Sum class"""
-    def two_sum(self, nums, target):
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
         """returns indices of nums, sum to target."""
         sub_nums = []
         for num in nums:
@@ -15,6 +17,6 @@ class TwoSum(object):
         index_arr = []
         for m in range(len(nums)):
             for num in index_ar:
-                if num == nums[m]:
+                if num == nums[m] and m not in index_arr:
                     index_arr.append(m)
         return index_arr
